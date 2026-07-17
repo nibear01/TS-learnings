@@ -1,0 +1,16 @@
+{
+  "name": "ts-learnings",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/basics/index.js",
+    "dev" : "npx tsc"  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
