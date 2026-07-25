@@ -51,9 +51,37 @@ function getStudentInfo(stu: student | string) {
   if (checkStudent(stu)) {
     return `Student name: ${stu.name} and student age: ${stu.age}`;
   }
-  return `Student: ${stu}`
+  return `Student: ${stu}`;
 }
 
 console.log(getStudentInfo(student)); // 'Student name: Naved and student age: 25'
 console.log(getStudentInfo("Unknown")); // 'Student: Unknown'
 
+// defining some student types - 
+type freshman = { type: "freshman"; name: string; age: number };
+type sophomore = { type: "sophomore"; name: string; age: number };
+type junior = { type: "junior"; name: string; age: number };
+type senior = { type: "senior"; name: string; age: number };
+
+type studentType = freshman | sophomore | junior | senior;
+
+function getStudentType(student: studentType): string {
+  switch (student.type) {
+    case "freshman":
+      return `Student is a freshman: ${student.name} and student age: ${student.age}`;
+    case "sophomore":
+      return `Student is a sophomore: ${student.name} and student age: ${student.age}`;
+    case "junior":
+      return `Student is a junior: ${student.name} and student age: ${student.age}`;
+    case "senior":
+      return `Student is a senior: ${student.name} and student age: ${student.age}`;
+  }
+}
+const student2026: studentType = {
+  type: "senior",
+  name: "Naved",
+  age: 25,
+};
+console.log(getStudentType(student2026)); // 'Student is a senior: Naved and student age: 25'
+
+// should not use any type in ts, it will defeat the purpose of using ts. use unknown type instead of any type.
