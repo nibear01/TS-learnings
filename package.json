@@ -2,9 +2,12 @@
   "name": "ts-learnings",
   "version": "1.0.0",
   "main": "index.js",
+  "module": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "npx tsc",
     "start": "node dist/basics/index.js",
-    "dev" : "npx tsc"  
+    "dev": "npx tsc"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +15,8 @@
   "description": "",
   "devDependencies": {
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "axios": "^1.19.0"
   }
 }
